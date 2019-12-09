@@ -8,11 +8,15 @@ const List = styled.ul`
   width: 100%;
 `
 
-const ContactGroup = ({ index, contacts }) => {
+const Section = styled.section`
+  display: ${props => props.display ? "block" : "none" }
+`;
+
+const ContactGroup = ({ activeContact, activeGroup, contacts, letter }) => {
   return (
-    <section>
+    <Section display={letter === activeGroup}>
       <header>
-        <h1>{index}</h1>
+        <h1>{letter}</h1>
       </header>
       <List>
         {
@@ -27,7 +31,7 @@ const ContactGroup = ({ index, contacts }) => {
           ))
         }
       </List>
-    </section>
+    </Section>
   )
 }
 

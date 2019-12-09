@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Tab from './components/Tab/Tab';
-import Group from './components/Group/Group';
+import Tabs from './components/Tabs/Tabs';
+import Contacts from './components/Contacts/Contacts';
 
 class App extends Component {
   state = {
     contacts: {},
     active: {
-      group: null,
+      group: 'M',
       contact: null
     },
     message: ''
@@ -48,31 +48,15 @@ class App extends Component {
   render() {
     return (
       <>
-        <header>
-          {
-            Object.entries(this.state.contacts).map(group => (
-              <Tab
-                activeTab={this.state.active.group}
-                letter={group[0]}
-                entries={group[1].length}
-                key={group[0]}
-              />
-            ))
-          }
-        </header>
-        <main>
-          {
-            Object.entries(this.state.contacts).map(entry => (
-              <Group
-                activeContact={this.state.active.contact}
-                activeGroup={this.state.active.group}
-                letter={entry[0]}
-                contacts={entry[1]}
-                key={entry[0]}
-              />
-            ))
-          }
-        </main>
+        <Tabs
+          activeTab={this.state.active.group}
+          contacts={this.state.contacts}
+        />
+        <Contacts
+          activeContact={this.state.active.contact}
+          activeGroup={this.state.active.group}
+          contacts={this.state.contacts}
+        />
       </>
     );
   }
