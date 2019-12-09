@@ -5,16 +5,31 @@ import './App.css';
 
 class App extends Component {
   state = {
-    contacts: [],
+    contacts: {},
     message: ''
   }
   componentDidMount() {
     axios
-      .get('https://randomuser.me/api/?results=120')
+      .get('https://randomuser.me/api/?results=120&nat=gb&inc=name,picture,email,phone,location')
       .then(({ data }) => this.sortData(data))
       .catch(({ message }) => {
         this.setState({ message })
       });
+  }
+
+  batchContacts(list) {
+    const contacts = {}
+    for (let i = 0; i < 26; i ++) {
+      contacts[String.fromCharCode(65 + i)] = [] // generates A-Z property keys
+    }
+    list.forEach(el => {
+      const index = el.name.last[0]
+      contacts[index].push(el)
+    })
+    this.setState(prevState => ({
+      ...prevState,
+      contacts
+    }));
   }
 
   sortData(data) {
@@ -23,13 +38,13 @@ class App extends Component {
       const nameB = `${b.name.last}, ${b.name.first}`
       return nameA.localeCompare(nameB)
     })
-    this.setState({ contacts })
+    this.batchContacts(contacts)
   }
 
   render() {
     return (
       <div className="App">
-        <ContactList />
+        <ContactList contacts={this.state.contacts} />
       </div>
     );
   }
