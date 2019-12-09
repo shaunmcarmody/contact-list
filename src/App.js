@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+class App extends Component {
+  state = {
+    contacts: []
+  }
+  componentDidMount() {
+    axios
+      .get('https://randomuser.me/api/?results=120')
+      .then(({ data }) => {
+        const contacts = data.results.sort((a, b) => {
+          const nameA = `${a.name.last}, ${a.name.first}`
+          const nameB = `${b.name.last}, ${b.name.first}`
+          return nameA.localeCompare(nameB)
+        })
+        this.setState({ contacts })
+      })
+      .catch(err => {
+        console.log(err)
+      });
+  }
+  render() {
+    return (
+      <div className="App">
+      </div>
+    );
+  }
 }
 
 export default App;
