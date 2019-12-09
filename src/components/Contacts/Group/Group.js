@@ -12,7 +12,7 @@ const Section = styled.section`
   display: ${props => props.match ? "block" : "none" }
 `;
 
-const Group = ({ activeContact, activeGroup, contacts, letter, updateActiveContact }) => {
+const Group = ({ activeContact, activeGroup, closeContact, contacts, letter, updateActiveContact }) => {
   return (
     <Section match={letter === activeGroup}>
       <Div>
@@ -20,6 +20,7 @@ const Group = ({ activeContact, activeGroup, contacts, letter, updateActiveConta
           contacts && contacts.map(person => (
             <Person
               activeContact={activeContact}
+              closeContact={closeContact}
               person={person}
               id={`${person.id.name} ${person.id.value}`}
               key={`${person.id.name} ${person.id.value}`}

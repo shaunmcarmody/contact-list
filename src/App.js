@@ -45,6 +45,16 @@ class App extends Component {
     this.batchContacts(contacts);
   }
 
+  closeContact = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      active: {
+        ...prevState.active,
+        contact: null
+      }
+    }));
+  }
+
   updateActiveGroup = letter => {
     this.setState(prevState => ({
       ...prevState,
@@ -76,6 +86,7 @@ class App extends Component {
         <Contacts
           activeContact={this.state.active.contact}
           activeGroup={this.state.active.group}
+          closeContact={this.closeContact}
           contacts={this.state.contacts}
           updateActiveContact={this.updateActiveContact}
         />

@@ -1,7 +1,7 @@
 import React from 'react';
 import Group from './Group/Group';
 
-const Contacts = ({ activeContact, activeGroup, contacts, updateActiveContact }) => {
+const Contacts = ({ activeContact, activeGroup, closeContact, contacts, updateActiveContact }) => {
   return (
     <main>
       {
@@ -9,6 +9,7 @@ const Contacts = ({ activeContact, activeGroup, contacts, updateActiveContact })
           <Group
             activeContact={activeContact}
             activeGroup={activeGroup}
+            closeContact={closeContact}
             letter={entry[0]}
             contacts={entry[1]}
             key={entry[0]}

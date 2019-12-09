@@ -20,7 +20,7 @@ const Name = styled.h1`
   font-weight: 400;
 `
 
-const Person = ({activeContact, person, id, updateActiveContact}) => {
+const Person = ({activeContact, closeContact, person, id, updateActiveContact}) => {
   return (
     <Div
       match={activeContact === id}
@@ -29,6 +29,7 @@ const Person = ({activeContact, person, id, updateActiveContact}) => {
         <Name>{` ${person.name.last.toUpperCase()}, ${person.name.first} `}</Name>
       </Header>
       <Card
+        closeContact={closeContact}
         name={person.name}
         picture={person.picture}
         email={person.email}
