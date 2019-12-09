@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react'
-import Group from './Group';
+import Tabs from './Tabs';
 
-describe('<Group />', () => {
+describe('<Tabs />', () => {
   it('renders successfully', () => {
-    render(<Group />);
+    render(<Tabs />);
   });
 });

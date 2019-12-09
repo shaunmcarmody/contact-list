@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react'
-import Group from './Group';
+import Contacts from './Contacts';
 
-describe('<Group />', () => {
+describe('<Contacts />', () => {
   it('renders successfully', () => {
-    render(<Group />);
+    render(<Contacts />);
   });
 });
