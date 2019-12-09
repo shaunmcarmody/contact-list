@@ -10,10 +10,12 @@ const Section = styled.section`
   display: ${props => props.match ? "block" : "none" }
 `;
 
-const Person = ({activeContact, id, email, phone, location, name, picture}) => {
+const Person = ({activeContact, id, email, phone, location, name, picture, updateActiveContact}) => {
   return (
     <>
-      <Item>{`${name.last.toUpperCase()}, ${name.first}`}</Item>
+      <Item onClick={() => updateActiveContact(id)} >
+        {` ${name.last.toUpperCase()}, ${name.first} `}
+      </Item>
       <Section match={id === activeContact}>
         <div>hsghsdghakshgdakshdgjakhsgdjahgkshsgkd</div>
       </Section>

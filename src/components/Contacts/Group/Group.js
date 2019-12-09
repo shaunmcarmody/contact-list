@@ -12,7 +12,7 @@ const Section = styled.section`
   display: ${props => props.match ? "block" : "none" }
 `;
 
-const Group = ({ activeContact, activeGroup, contacts, letter }) => {
+const Group = ({ activeContact, activeGroup, contacts, letter, updateActiveContact }) => {
   return (
     <Section match={letter === activeGroup}>
       <header>
@@ -30,6 +30,7 @@ const Group = ({ activeContact, activeGroup, contacts, letter }) => {
               picture={person.picture}
               id={`${person.id.name} ${person.id.value}`}
               key={`${person.id.name} ${person.id.value}`}
+              updateActiveContact={updateActiveContact}
             />
           ))
         }
