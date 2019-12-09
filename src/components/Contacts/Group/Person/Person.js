@@ -6,10 +6,17 @@ const Item = styled.li`
   width: 50%;
 `;
 
-const Person = ({email, phone, location, name, picture}) => {
+const Section = styled.section`
+  display: ${props => props.match ? "block" : "none" }
+`;
+
+const Person = ({activeContact, id, email, phone, location, name, picture}) => {
   return (
     <>
       <Item>{`${name.last.toUpperCase()}, ${name.first}`}</Item>
+      <Section match={id === activeContact}>
+        <div>hsghsdghakshgdakshdgjakhsgdjahgkshsgkd</div>
+      </Section>
     </>
   )
 }

@@ -7,7 +7,7 @@ const Header = styled.header`
   justify-content: space-between;
 `;
 
-const Tabs = ({ activeTab, contacts }) => {
+const Tabs = ({ activeTab, contacts, updateActiveGroup }) => {
   return (
     <Header>
       {
@@ -17,6 +17,7 @@ const Tabs = ({ activeTab, contacts }) => {
             letter={group[0]}
             entries={group[1].length}
             key={group[0]}
+            updateActiveGroup={updateActiveGroup}
           />
         ))
       }

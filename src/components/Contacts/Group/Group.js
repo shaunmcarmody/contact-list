@@ -9,12 +9,12 @@ const List = styled.ul`
 `
 
 const Section = styled.section`
-  display: ${props => props.display ? "block" : "none" }
+  display: ${props => props.match ? "block" : "none" }
 `;
 
-const ContactGroup = ({ activeContact, activeGroup, contacts, letter }) => {
+const Group = ({ activeContact, activeGroup, contacts, letter }) => {
   return (
-    <Section display={letter === activeGroup}>
+    <Section match={letter === activeGroup}>
       <header>
         <h1>{letter}</h1>
       </header>
@@ -22,11 +22,14 @@ const ContactGroup = ({ activeContact, activeGroup, contacts, letter }) => {
         {
           contacts && contacts.map(person => (
             <Person
+              activeContact={activeContact}
               email={person.email}
               phone={person.phone}
               location={person.location}
               name={person.name}
               picture={person.picture}
+              id={`${person.id.name} ${person.id.value}`}
+              key={`${person.id.name} ${person.id.value}`}
             />
           ))
         }
@@ -35,4 +38,4 @@ const ContactGroup = ({ activeContact, activeGroup, contacts, letter }) => {
   )
 }
 
-export default ContactGroup;
+export default Group;

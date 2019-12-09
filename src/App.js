@@ -7,7 +7,7 @@ class App extends Component {
   state = {
     contacts: {},
     active: {
-      group: 'M',
+      group: 'A',
       contact: null
     },
     message: ''
@@ -42,7 +42,27 @@ class App extends Component {
       const nameB = `${b.name.last}, ${b.name.first}`
       return nameA.localeCompare(nameB)
     })
-    this.batchContacts(contacts)
+    this.batchContacts(contacts);
+  }
+
+  updateActiveGroup = letter => {
+    this.setState(prevState => ({
+      ...prevState,
+      active: {
+        ...prevState.active,
+        group: letter
+      }
+    }));
+  }
+
+  updateActiveContact = id => {
+    this.setState(prevState => ({
+      ...prevState,
+      active: {
+        ...prevState.active,
+        contact: id
+      }
+    }));
   }
 
   render() {
@@ -51,11 +71,13 @@ class App extends Component {
         <Tabs
           activeTab={this.state.active.group}
           contacts={this.state.contacts}
+          updateActiveGroup={this.updateActiveGroup}
         />
         <Contacts
           activeContact={this.state.active.contact}
           activeGroup={this.state.active.group}
           contacts={this.state.contacts}
+          updateActiveContact={this.updateActiveContact}
         />
       </>
     );

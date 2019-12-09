@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Tab = ({ activeTab, letter, entries }) => {
+const Tab = ({ activeTab, letter, entries, updateActiveGroup }) => {
   return (
-    <div>
+    <div onClick={() => updateActiveGroup(letter)}>
       <p>{letter}</p>
     </div>
   )
