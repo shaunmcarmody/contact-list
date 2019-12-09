@@ -2,7 +2,7 @@ import React from 'react';
 import Person from './Person/Person'
 import styled from 'styled-components'
 
-const List = styled.ul`
+const Div = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -15,26 +15,19 @@ const Section = styled.section`
 const Group = ({ activeContact, activeGroup, contacts, letter, updateActiveContact }) => {
   return (
     <Section match={letter === activeGroup}>
-      <header>
-        <h1>{letter}</h1>
-      </header>
-      <List>
+      <Div>
         {
           contacts && contacts.map(person => (
             <Person
               activeContact={activeContact}
-              email={person.email}
-              phone={person.phone}
-              location={person.location}
-              name={person.name}
-              picture={person.picture}
+              person={person}
               id={`${person.id.name} ${person.id.value}`}
               key={`${person.id.name} ${person.id.value}`}
               updateActiveContact={updateActiveContact}
             />
           ))
         }
-      </List>
+      </Div>
     </Section>
   )
 }
