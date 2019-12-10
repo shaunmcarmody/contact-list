@@ -7,6 +7,7 @@ import styled from 'styled-components';
 const ContactList = styled.div`
   @media(max-width: 700px) {
     display: flex;
+    min-height: 100vh;
     width: 100%;
   }
 
