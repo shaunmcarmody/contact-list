@@ -40,7 +40,42 @@ describe('<Person />', () => {
     />
   )
 
+  it('renders person name', () => {
+    const { getAllByText } = render(person)
+    expect(getAllByText(/ALLEN, Molly/i).length).toBe(2)
+  })
+
   it('renders successfully', () => {
     render(person);
   });
+
+  it('renders person email', () => {
+    const { getByText } = render(person)
+    getByText(/molly.allen@example.com/i)
+  })
+
+  it('renders person phone number', () => {
+    const { getByText } = render(person)
+    getByText(/016974 44617/i)
+  })
+
+  it('renders person street', () => {
+    const { getByText } = render(person)
+    getByText(/5036 School Lane/i)
+  })
+
+  it('renders person city', () => {
+    const { getByText } = render(person)
+    getByText(/Chester/i)
+  })
+
+  it('renders person state', () => {
+    const { getByText } = render(person)
+    getByText(/Cheshire/i)
+  })
+
+  it('renders person state', () => {
+    const { getByText } = render(person)
+    getByText(/P7 7HD/i)
+  })
 });
