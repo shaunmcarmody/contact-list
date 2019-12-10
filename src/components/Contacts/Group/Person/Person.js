@@ -6,9 +6,8 @@ const Div = styled.div`
   border-bottom: 1px solid rgba(33, 34, 64, 0.16);
   display: block;
   height: 25px;
-  margin: auto;
   margin-top: 10px;
-  
+  margin-right: 10px;
   z-index: ${props => props.match ? "1" : "0" }
   width: calc(50% - 20px);
 
