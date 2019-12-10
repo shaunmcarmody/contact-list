@@ -5,12 +5,19 @@ import Contacts from './components/Contacts/Contacts';
 import styled from 'styled-components';
 
 const ContactList = styled.div`
-  border-radius: 4px;
-  margin: auto;
-  margin-top: 100px;
-  max-width: 1088px;
-  max-height: 600px;
-  width: calc(100% - 64px);
+  @media(max-width: 700px) {
+    display: flex;
+    width: 100%;
+  }
+
+  @media(min-width: 701px) {
+    border-radius: 4px;
+    margin: auto;
+    margin-top: 100px;
+    max-width: 1088px;
+    max-height: 600px;
+    width: calc(100% - 64px);
+  }
 `;
 
 class App extends Component {

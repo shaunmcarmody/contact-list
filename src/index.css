@@ -55,7 +55,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	height: 100vh;
 	background-image: url("./assets/splash.jpg");
 	background-size: cover;
 }
@@ -72,3 +71,4 @@ html {
 * {
   box-sizing: border-box;
 }
+

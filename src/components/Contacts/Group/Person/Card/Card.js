@@ -4,6 +4,10 @@ import styled from 'styled-components';
 
 const Aside = styled.div`
   width: 120px;
+
+  @media(max-width: 900px) {
+    width: 60px;
+  }
 `;
 
 const Button = styled.button`
@@ -32,6 +36,12 @@ const Image = styled.div`
   height: 80px;
   margin: auto;
   width: 80px;
+
+  @media(max-width: 900px) {
+    background-size: 40px;
+    height: 40px;
+    width: 40px;
+  }
 `;
 
 const Section = styled.section`

@@ -9,6 +9,12 @@ const Div = styled.div`
   cursor: pointer;
   flex: 1;
   padding-bottom: 5px;
+
+  @media(max-width: 700px) {
+    border: 1px solid grey;
+    border-right: ${props => props.active ? '1px solid #f3f3f3' : '1px solid grey'}
+    border-radius: 0 5px 0 0;
+  }
 `
 
 const Entries = styled.p`

@@ -6,10 +6,15 @@ const Div = styled.div`
   border-bottom: 1px solid rgba(33, 34, 64, 0.16);
   display: block;
   height: 25px;
+  margin: auto;
   margin-top: 10px;
-  margin-right: 10%;
+  
   z-index: ${props => props.match ? "1" : "0" }
-  width: 40%;
+  width: calc(50% - 20px);
+
+  @media(max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 const Name = styled.h1`
