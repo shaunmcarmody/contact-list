@@ -35,7 +35,7 @@ This [React](https://reactjs.org/) project uses [Random User API](https://random
 ## Setup
 
 ```
-**Development Environment**
+Development Environment
 
 git clone https://github.com/shaunmcarmody/contact-list.git
 cd contact-list
@@ -44,7 +44,7 @@ yarn start
 ```
 
 ```
-**Testing Environment**
+Testing Environment
 
 git clone https://github.com/shaunmcarmody/contact-list.git
 cd contact-list
