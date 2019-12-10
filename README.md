@@ -2,9 +2,7 @@
 ## Contact List
 
 ## Project Overview
-Stand-Em-Ups is an application that helps managers run their daily standup reports asynchronously to help maximize efficiency and let team members submit their reports any time during the day. Our application will help the whole team and best of all, it is completely free to start!
-
-You can find this project hosted on [Netlify] (https://netlify.com).
+This [React](https://reactjs.org/) project uses [Random User API](https://randomuser.me/) to create a contact list. You can find this project hosted on [Netlify](https://netlify.com).
 
 ## API's
 ### [Random User API](https://randomuser.me/)
@@ -14,7 +12,7 @@ You can find this project hosted on [Netlify] (https://netlify.com).
 
 |                                         [Shaun Carmody](https://github.com/shaunmcarmody)                                      |
 |     :-----------------------------------------------------------------------------------------------------------------------:  |
-|    [<img src="https://avatars0.githubusercontent.com/u/42783498?s=400&v=4" width = "200" />](https://github.com/shaunmcarmody) |
+|    [<img src="https://avatars2.githubusercontent.com/u/23500510?s=460&v=4" width = "200" />](https://github.com/shaunmcarmody) |
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/shaunmcarmody)                     |
 | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/shaunmcarmody/) |
 
