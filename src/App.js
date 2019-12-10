@@ -22,13 +22,13 @@ class App extends Component {
     },
     message: ''
   }
-  componentDidMount() {
-    axios
-      .get('https://randomuser.me/api/?results=120&nat=gb&inc=name,picture,email,phone,location,id')
-      .then(({ data }) => this.sortData(data))
-      .catch(({ message }) => {
-        this.setState({ message })
-      });
+  async componentDidMount() {
+    try {
+      const { data } = await axios('https://randomuser.me/api/?results=120&nat=gb&inc=name,picture,email,phone,location,id')
+      this.sortData(data)
+    } catch ({ message }) {
+      this.setState({ message })
+    }
   }
 
   batchContacts(list) {
