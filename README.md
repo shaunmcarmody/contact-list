@@ -2,7 +2,7 @@
 ## Contact List
 
 ## Project Overview
-This [React](https://reactjs.org/) project uses [Random User API](https://randomuser.me/) to create a contact list. You can find this project hosted on [Netlify](https://netlify.com).
+This [React](https://reactjs.org/) project uses [Random User API](https://randomuser.me/) to create a contact list. You can find this project hosted on [Netlify](https://reactcontactlist.netlify.com/).
 
 
 ## Contributor
