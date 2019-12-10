@@ -7,15 +7,13 @@ describe('<Tab />', () => {
     render(<Tab />);
   });
 
-  it('it displays letter prop', () => {
+  it('renders letter prop', () => {
     const { getByText } = render(<Tab letter="A" />);
     getByText(/A/i);
   });
 
-  it('it displays entries prop', () => {
+  it('renders entries prop', () => {
     const { getByText } = render(<Tab entries="26" />);
     getByText(/26/i);
   });
-
-
 });

@@ -13,7 +13,7 @@ describe('<Info />', () => {
     render(info);
   });
 
-  it('displays contacts info', () => {
+  it('renders contacts info', () => {
     const { getByText } = render(info);
     getByText(/molly.allen@example.com/i);
   });

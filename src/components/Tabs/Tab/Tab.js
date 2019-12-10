@@ -28,6 +28,7 @@ const Tab = ({ activeTab, letter, entries, updateActiveGroup }) => {
   return (
     <Div
       active={activeTab === letter}
+      data-testid="tab-element"
       onClick={() => updateActiveGroup(letter)}
     >
       <Entries

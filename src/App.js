@@ -40,7 +40,6 @@ class App extends Component {
       const index = contact.name.last[0]
       contacts[index].push(contact)
     })
-    console.log(contacts['A'][0])
     this.setState(prevState => ({
       ...prevState,
       contacts
