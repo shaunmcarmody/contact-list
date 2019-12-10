@@ -4,9 +4,6 @@
 ## Project Overview
 This [React](https://reactjs.org/) project uses [Random User API](https://randomuser.me/) to create a contact list. You can find this project hosted on [Netlify](https://netlify.com).
 
-## API's
-### [Random User API](https://randomuser.me/)
-
 
 ## Contributor
 
@@ -20,6 +17,22 @@ This [React](https://reactjs.org/) project uses [Random User API](https://random
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
 ![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
+## Dependencies
+
+- axios
+- react
+- react-dom
+- react-scripts
+- styled-components
+
+## Dev Dependencies
+
+- testing-library
+- jest
+
+## API's
+### [Random User API](https://randomuser.me/)
 
 ## Setup
 
