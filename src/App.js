@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Tabs from './components/Tabs/Tabs';
 import Contacts from './components/Contacts/Contacts';
+import styled from 'styled-components';
+
+const ContactList = styled.div`
+  border-radius: 4px;
+  margin: auto;
+  margin-top: 100px;
+  max-width: 1088px;
+  max-height: 600px;
+  width: calc(100% - 64px);
+`;
 
 class App extends Component {
   state = {
@@ -77,7 +87,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <ContactList>
         <Tabs
           activeTab={this.state.active.group}
           contacts={this.state.contacts}
@@ -90,7 +100,7 @@ class App extends Component {
           contacts={this.state.contacts}
           updateActiveContact={this.updateActiveContact}
         />
-      </>
+      </ContactList>
     );
   }
 }

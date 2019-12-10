@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
-  border: 1px solid black;
-  border-bottom: ${props => props.active ? '1px solid white' : '1px solid black'}
+  background-color: ${props => props.active ? '#f3f3f3': '#EDEDED'}
+  border: 1px solid grey;
+  border-bottom: ${props => props.active ? '1px solid #f3f3f3' : '1px solid grey'}
   border-radius: 5px 5px 0 0;
   cursor: pointer;
   flex: 1;

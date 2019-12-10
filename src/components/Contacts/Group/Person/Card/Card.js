@@ -1,34 +1,46 @@
 import React from 'react';
+import Info from './Info/Info';
 import styled from 'styled-components';
 
 const Aside = styled.div`
+  width: 120px;
 `;
 
 const Button = styled.button`
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 10px;
 `;
 
 const Div = styled.div`
+  margin-top: 18px;
 `
 
-const Header = styled.header`
+const Header = styled.h1`
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 10px;
 `;
 
 const Image = styled.div`
   background: ${props => `url(${props.src}) center no-repeat`}
   background-size: 80px;
   border-radius: 50%;
+  display: block;
   height: 80px;
+  margin: auto;
   width: 80px;
-`;
-
-const Info = styled.p`
 `;
 
 const Section = styled.section`
   background-color: white;
+  border: 1px solid rgba(33, 34, 64, 0.16);
   display: ${props => props.match ? "flex" : "none"}
-  height: 100px;
-  padding: 10px;
+  min-height: 100px;
+  margin-top: 8px;
+  padding: 10px 0;
   positon: absolute;
 `;
 
@@ -47,26 +59,13 @@ const Card = ({ activeContact, closeContact, name, picture, email, phone, locati
         <Header>
           {` ${name.last.toUpperCase()}, ${name.first} `}
         </Header>
-        <Info>
-          email: {email}
-        </Info>
-        <Info>
-          phone: {phone}
-        </Info>
-        <Info>
-          street: {` ${location.street.number} ${location.street.name} `}
-        </Info>
-        <Info>
-          city: {location.city}
-        </Info>
-        <Info>
-          state: {location.state}
-        </Info>
-        <Info>
-          postcode: {location.postcode}
-        </Info>
+        <Info info="email" data={email} />
+        <Info info="phone" data={phone} />
+        <Info info="street" data={` ${location.street.number} ${location.street.name} `} />
+        <Info info="city" data={location.city} />
+        <Info info="state" data={location.state} />
+        <Info info="postcode" data={location.postcode} />
       </Div>
-
     </Section>
   )
 }

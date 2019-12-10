@@ -3,14 +3,13 @@ import styled from 'styled-components'
 import Card from './Card/Card';
 
 const Div = styled.div`
+  border-bottom: 1px solid rgba(33, 34, 64, 0.16);
   display: block;
-  height: 10px;
+  height: 25px;
+  margin-top: 10px;
+  margin-right: 10%;
   z-index: ${props => props.match ? "1" : "0" }
-  width: 50%;
-`;
-
-const Header = styled.header`
-  
+  width: 40%;
 `;
 
 const Name = styled.h1`
@@ -25,9 +24,9 @@ const Person = ({activeContact, closeContact, person, id, updateActiveContact}) 
     <Div
       match={activeContact === id}
     >
-      <Header onClick={() => updateActiveContact(id)}>
+      <header onClick={() => updateActiveContact(id)}>
         <Name>{` ${person.name.last.toUpperCase()}, ${person.name.first} `}</Name>
-      </Header>
+      </header>
       <Card
         closeContact={closeContact}
         name={person.name}
