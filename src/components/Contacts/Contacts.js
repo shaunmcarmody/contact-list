@@ -1,5 +1,5 @@
 import React from 'react';
-import Group from './Group/Group';
+import Person from './Person/Person';
 import styled from 'styled-components';
 
 const Main = styled.main`
@@ -20,15 +20,30 @@ const Main = styled.main`
   }
 `;
 
+const Section = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+`;
+
+
 const Contacts = ({ activeContact, closeContact, contacts, updateActiveContact }) => {
   return (
     <Main>
-      <Group
-        activeContact={activeContact}
-        closeContact={closeContact}
-        contacts={contacts}
-        updateActiveContact={updateActiveContact}
-      />
+      <Section>
+        {
+          contacts && contacts.map(person => (
+            <Person
+              activeContact={activeContact}
+              closeContact={closeContact}
+              person={person}
+              id={`${person.id.name} ${person.id.value}`}
+              key={`${person.id.name} ${person.id.value}`}
+              updateActiveContact={updateActiveContact}
+            />
+          ))
+        }
+      </Section>
     </Main>
   )
 }
