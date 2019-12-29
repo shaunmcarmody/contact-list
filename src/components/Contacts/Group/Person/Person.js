@@ -8,7 +8,7 @@ const Div = styled.div`
   height: 25px;
   margin-top: 10px;
   margin-right: 10px;
-  z-index: ${props => props.match ? "1" : "0" }
+  z-index: ${props => props.match ? "1" : "0"}
   width: calc(50% - 20px);
 
   @media(max-width: 700px) {
@@ -23,14 +23,17 @@ const Name = styled.h1`
   font-weight: 400;
 `
 
-const Person = ({activeContact, closeContact, person, id, updateActiveContact}) => {
+const Person = ({ activeContact, closeContact, person, id, updateActiveContact }) => {
+  const name = `${person.name.last.toUpperCase()}, ${person.name.first}`
   return (
     <Div
       match={activeContact === id}
     >
-      <header onClick={() => updateActiveContact(id)}>
-        <Name>{` ${person.name.last.toUpperCase()}, ${person.name.first} `}</Name>
-      </header>
+      <Name
+        onClick={() => updateActiveContact(id)}
+      >
+        {name}
+      </Name>
       {
         activeContact === id && (
           <Card
