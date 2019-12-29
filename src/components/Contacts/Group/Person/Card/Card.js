@@ -1,5 +1,4 @@
 import React from 'react';
-import Info from './Info/Info';
 import styled from 'styled-components';
 
 const Aside = styled.div`
@@ -44,6 +43,10 @@ const Image = styled.div`
   }
 `;
 
+const Span = styled.span`
+  font-weight: 500;
+`;
+
 const Section = styled.section`
   background-color: white;
   border: 1px solid rgba(33, 34, 64, 0.16);
@@ -53,6 +56,14 @@ const Section = styled.section`
   padding: 10px 0;
   positon: absolute;
 `;
+
+const Text = styled.p`
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+`;
+
+
+
 
 const Card = ({ activeContact, closeContact, name, picture, email, phone, location, id }) => {
   return (
@@ -69,12 +80,12 @@ const Card = ({ activeContact, closeContact, name, picture, email, phone, locati
         <Header>
           {` ${name.last.toUpperCase()}, ${name.first} `}
         </Header>
-        <Info info="email" data={email} />
-        <Info info="phone" data={phone} />
-        <Info info="street" data={` ${location.street.number} ${location.street.name} `} />
-        <Info info="city" data={location.city} />
-        <Info info="state" data={location.state} />
-        <Info info="postcode" data={location.postcode} />
+        <Text><Span>email: </Span>{email}</Text>
+        <Text><Span>phone: </Span>{phone}</Text>
+        <Text><Span>street: </Span>{` ${location.street.number} ${location.street.name} `}</Text>
+        <Text><Span>city: </Span>{location.city}</Text>
+        <Text><Span>state: </Span>{location.state}</Text>
+        <Text><Span>postcode: </Span>{location.postcode}</Text>
       </Div>
     </Section>
   )
