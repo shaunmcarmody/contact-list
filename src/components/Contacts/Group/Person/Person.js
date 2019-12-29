@@ -31,16 +31,20 @@ const Person = ({activeContact, closeContact, person, id, updateActiveContact}) 
       <header onClick={() => updateActiveContact(id)}>
         <Name>{` ${person.name.last.toUpperCase()}, ${person.name.first} `}</Name>
       </header>
-      <Card
-        closeContact={closeContact}
-        name={person.name}
-        picture={person.picture}
-        email={person.email}
-        phone={person.phone}
-        location={person.location}
-        id={id}
-        activeContact={activeContact}
-      />
+      {
+        activeContact === id && (
+          <Card
+            closeContact={closeContact}
+            name={person.name}
+            picture={person.picture}
+            email={person.email}
+            phone={person.phone}
+            location={person.location}
+            id={id}
+            activeContact={activeContact}
+          />
+        )
+      }
     </Div>
   )
 }
