@@ -20,22 +20,15 @@ const Main = styled.main`
   }
 `;
 
-const Contacts = ({ activeContact, activeGroup, closeContact, contacts, updateActiveContact }) => {
+const Contacts = ({ activeContact, closeContact, contacts, updateActiveContact }) => {
   return (
     <Main>
-      {
-        contacts && Object.entries(contacts).map(entry => (
-          <Group
-            activeContact={activeContact}
-            activeGroup={activeGroup}
-            closeContact={closeContact}
-            letter={entry[0]}
-            contacts={entry[1]}
-            key={entry[0]}
-            updateActiveContact={updateActiveContact}
-          />
-        ))
-      }
+      <Group
+        activeContact={activeContact}
+        closeContact={closeContact}
+        contacts={contacts}
+        updateActiveContact={updateActiveContact}
+      />
     </Main>
   )
 }

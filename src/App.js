@@ -103,9 +103,8 @@ class App extends Component {
         />
         <Contacts
           activeContact={this.state.active.contact}
-          activeGroup={this.state.active.group}
           closeContact={this.closeContact}
-          contacts={this.state.contacts}
+          contacts={this.state.contacts[this.state.active.group]}
           updateActiveContact={this.updateActiveContact}
         />
       </ContactList>
