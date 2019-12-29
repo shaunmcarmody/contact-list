@@ -41,9 +41,10 @@ class App extends Component {
 
   batchContacts(list) {
     const contacts = {}
-    for (let i = 0; i < 26; i ++) {
-      contacts[String.fromCharCode(65 + i)] = [] // generates A-Z property keys
-    }
+    const tabs = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    tabs.forEach(el => {
+      contacts[el.toUpperCase()] = []
+    })
     list.forEach(contact => {
       const index = contact.name.last[0]
       contacts[index].push(contact)
