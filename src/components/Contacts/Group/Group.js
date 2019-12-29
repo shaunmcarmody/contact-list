@@ -2,33 +2,27 @@ import React from 'react';
 import Person from './Person/Person'
 import styled from 'styled-components'
 
-const Div = styled.div`
+const Section = styled.section`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-`
-
-const Section = styled.section`
-  display: ${props => props.match ? "block" : "none" }
 `;
 
-const Group = ({ activeContact, activeGroup, closeContact, contacts, letter, updateActiveContact }) => {
+const Group = ({ activeContact, closeContact, contacts, updateActiveContact }) => {
   return (
-    <Section match={letter === activeGroup}>
-      <Div>
-        {
-          contacts && contacts.map(person => (
-            <Person
-              activeContact={activeContact}
-              closeContact={closeContact}
-              person={person}
-              id={`${person.id.name} ${person.id.value}`}
-              key={`${person.id.name} ${person.id.value}`}
-              updateActiveContact={updateActiveContact}
-            />
-          ))
-        }
-      </Div>
+    <Section>
+      {
+        contacts && contacts.map(person => (
+          <Person
+            activeContact={activeContact}
+            closeContact={closeContact}
+            person={person}
+            id={`${person.id.name} ${person.id.value}`}
+            key={`${person.id.name} ${person.id.value}`}
+            updateActiveContact={updateActiveContact}
+          />
+        ))
+      }
     </Section>
   )
 }
