@@ -44,7 +44,6 @@ const Person = ({ activeContact, closeContact, person, id, updateActiveContact }
             phone={person.phone}
             location={person.location}
             id={id}
-            activeContact={activeContact}
           />
         )
       }

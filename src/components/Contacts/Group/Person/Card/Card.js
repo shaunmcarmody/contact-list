@@ -50,7 +50,7 @@ const Span = styled.span`
 const Section = styled.section`
   background-color: white;
   border: 1px solid rgba(33, 34, 64, 0.16);
-  display: ${props => props.match ? "flex" : "none"}
+  display: flex;
   min-height: 100px;
   margin-top: 8px;
   padding: 10px 0;
@@ -65,9 +65,9 @@ const Text = styled.p`
 
 
 
-const Card = ({ activeContact, closeContact, name, picture, email, phone, location, id }) => {
+const Card = ({ closeContact, name, picture, email, phone, location, id }) => {
   return (
-    <Section match={activeContact === id}>
+    <Section>
       <Aside>
         <Button
           onClick={closeContact}
