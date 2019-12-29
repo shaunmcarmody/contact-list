@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Div = styled.div`
-  background-color: ${props => props.active ? '#f3f3f3': '#EDEDED'}
+const Button = styled.button`
+  background-color: ${props => props.active ? '#f3f3f3' : '#EDEDED'}
   border: 1px solid grey;
   border-bottom: ${props => props.active ? '1px solid #f3f3f3' : '1px solid grey'}
   border-radius: 5px 5px 0 0;
   cursor: pointer;
   flex: 1;
   padding-bottom: 5px;
+  color: ${props => props.active ? 'black' : 'grey'}
+  font-size: 2rem;
+  text-align: center;
 
   @media(max-width: 700px) {
     border: 1px solid grey;
@@ -24,15 +27,9 @@ const Entries = styled.p`
   text-align: right;
 `
 
-const Letter = styled.p`
-  color: ${props => props.active ? 'black' : 'grey'}
-  font-size: 2rem;
-  text-align: center;
-`
-
 const Tab = ({ activeTab, letter, entries, updateActiveGroup }) => {
   return (
-    <Div
+    <Button
       active={activeTab === letter}
       data-testid="tab-element"
       onClick={() => updateActiveGroup(letter)}
@@ -42,12 +39,8 @@ const Tab = ({ activeTab, letter, entries, updateActiveGroup }) => {
       >
         {entries}
       </Entries>
-      <Letter
-        active={activeTab === letter}
-      >
-        {letter}
-      </Letter>
-    </Div>
+      {letter}
+    </Button>
   )
 }
 
