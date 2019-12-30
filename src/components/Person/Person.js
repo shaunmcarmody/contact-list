@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import Card from '../Card/Card';
+import PropTypes from 'prop-types';
 
 const Div = styled.div`
   border-bottom: 1px solid rgba(33, 34, 64, 0.16);
@@ -49,6 +50,14 @@ const Person = ({ activeContact, closeContact, person, id, updateActiveContact }
       }
     </Div>
   )
+}
+
+Person.propTypes = {
+  activeContact: PropTypes.string,
+  closeContact: PropTypes.func,
+  person: PropTypes.object,
+  id: PropTypes.string,
+  updateActiveContact: PropTypes.func
 }
 
 export default Person

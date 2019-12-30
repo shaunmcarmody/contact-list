@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Button = styled.button`
   background-color: ${props => props.active ? '#f3f3f3' : '#EDEDED'}
@@ -50,6 +51,13 @@ const Tab = ({ activeTab, letter, entries, updateActiveGroup }) => {
       {letter}
     </Button>
   )
+}
+
+Tab.propTypes = {
+  activeTab: PropTypes.string,
+  letter: PropTypes.string,
+  entries: PropTypes.number,
+  updateActiveGroup: PropTypes.func
 }
 
 export default Tab

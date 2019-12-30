@@ -1,6 +1,7 @@
 import React from 'react';
 import Tab from '../Tab/Tab';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Header = styled.header`
   display: flex;
@@ -27,6 +28,12 @@ const Tabs = ({ activeTab, contacts, updateActiveGroup }) => {
       }
     </Header>
   )
+}
+
+Tabs.propTypes = {
+  activeTab: PropTypes.string,
+  contacts: PropTypes.object,
+  updateActiveGroup: PropTypes.func
 }
 
 export default Tabs;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Aside = styled.div`
   width: 120px;
@@ -65,7 +66,7 @@ const Text = styled.p`
 
 
 
-const Card = ({ closeContact, name, picture, email, phone, location, id }) => {
+const Card = ({ closeContact, name, picture, email, phone, location }) => {
   return (
     <Section>
       <Aside>
@@ -89,6 +90,15 @@ const Card = ({ closeContact, name, picture, email, phone, location, id }) => {
       </Div>
     </Section>
   )
+}
+
+Card.propTypes = {
+  closeContact: PropTypes.func,
+  name: PropTypes.objectOf(PropTypes.string),
+  picture: PropTypes.string,
+  email: PropTypes.string,
+  phone: PropTypes.string,
+  location: PropTypes.object,
 }
 
 export default Card;

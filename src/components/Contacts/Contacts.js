@@ -1,6 +1,7 @@
 import React from 'react';
 import Person from '../Person/Person';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Main = styled.main`
   background-color: #f3f3f3;
@@ -46,6 +47,13 @@ const Contacts = ({ activeContact, closeContact, contacts, updateActiveContact }
       </Section>
     </Main>
   )
+}
+
+Contacts.propTypes = {
+  activeContact: PropTypes.string,
+  closeContact: PropTypes.func,
+  contacts: PropTypes.array,
+  updateActiveContact: PropTypes.func
 }
 
 export default Contacts
