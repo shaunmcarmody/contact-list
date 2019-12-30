@@ -1,5 +1,5 @@
 import React from 'react';
-import Person from './Person/Person';
+import Person from '../Person/Person';
 import styled from 'styled-components';
 
 const Main = styled.main`

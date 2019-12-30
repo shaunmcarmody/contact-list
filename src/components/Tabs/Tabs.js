@@ -1,5 +1,5 @@
 import React from 'react';
-import Tab from './Tab/Tab';
+import Tab from '../Tab/Tab';
 import styled from 'styled-components';
 
 const Header = styled.header`

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import Card from './Card/Card';
+import Card from '../Card/Card';
 
 const Div = styled.div`
   border-bottom: 1px solid rgba(33, 34, 64, 0.16);
